@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="260.0" prefWidth="399.0" style="-fx-background-color: #5d2d85;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.FXMLDocumentController">
+   <children>
+      <Button fx:id="yesExitButton" layoutX="70.0" layoutY="157.0" mnemonicParsing="false" onAction="#YesExit" prefHeight="37.0" prefWidth="88.0" text="Yes" textFill="#5d2d85">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+      <Label alignment="TOP_RIGHT" layoutX="32.0" layoutY="76.0" text="Are you sure you want to go out?" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="noExitButton" layoutX="247.0" layoutY="157.0" mnemonicParsing="false" onAction="#NoExit" prefHeight="37.0" prefWidth="88.0" text="No" textFill="#5d2d85">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

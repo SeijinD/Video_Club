@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="315.0" prefWidth="399.0" style="-fx-background-color: #5d2d85;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.FXMLDocumentController">
+   <children>
+      <Label alignment="CENTER" layoutX="59.0" layoutY="14.0" prefHeight="32.0" prefWidth="286.0" text="Create Account" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="356.0" layoutY="14.0" mnemonicParsing="false" onAction="#Exit" prefHeight="25.0" prefWidth="38.0" style="-fx-background-color: #5d2d85;" text="X" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER_RIGHT" layoutX="13.0" layoutY="63.0" prefHeight="20.0" prefWidth="84.0" text="Type:" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="102.0" prefHeight="20.0" prefWidth="84.0" text="Username:" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="11.0" layoutY="144.0" prefHeight="20.0" prefWidth="84.0" text="Password:" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="11.0" layoutY="188.0" prefHeight="20.0" prefWidth="278.0" text="Are you sure to want to Create Account?" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="userRadioButton" layoutX="140.0" layoutY="64.0" mnemonicParsing="false" selected="true" text="User" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="typeAccount" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="adminRadioButton" layoutX="247.0" layoutY="64.0" mnemonicParsing="false" text="Admin" textFill="WHITE" toggleGroup="$typeAccount">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="userNameCreate" layoutX="123.0" layoutY="100.0" prefHeight="25.0" prefWidth="209.0" />
+      <CheckBox fx:id="sureBox" layoutX="312.0" layoutY="190.0" mnemonicParsing="false" />
+      <Button fx:id="createButton" layoutX="164.0" layoutY="219.0" mnemonicParsing="false" onAction="#CreateAndGoLogin" prefHeight="30.0" prefWidth="77.0" text="Create" textFill="#5d2d85">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="messageSignIn" alignment="CENTER" layoutX="19.0" layoutY="274.0" prefHeight="25.0" prefWidth="364.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordCreate" layoutX="125.0" layoutY="142.0" prefHeight="25.0" prefWidth="209.0" />
+   </children>
+</AnchorPane>
