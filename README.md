@@ -1,2 +1,2 @@
 # Video_Club
-Project JavaFx with Oracle SQL
+Project JavaFx with SQL
