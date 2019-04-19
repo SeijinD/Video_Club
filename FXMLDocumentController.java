@@ -273,20 +273,18 @@ public class FXMLDocumentController implements Initializable {
         String releaseDate = dateComboBox.getValue();
         String category = categoryComboBox.getValue();
          
-        String selectString = "SELECT * FROM movies WHERE ";
+        String selectString = "SELECT * FROM movies WHERE 1=1";
         
         if(title != null && !title.equals(""))
-            selectString += "title='" + title + "' AND ";
+            selectString += " AND title='" + title + "'";
         if(director != null && !director.equals(""))
-            selectString += "director='" + director + "' AND ";
+            selectString += " AND director='" + director + "'";
         if(star != null && !star.equals(""))
-            selectString += "star='" + star + "' AND ";
+            selectString += " AND star='" + star + "'";
         if(releaseDate != null && !releaseDate.equals(""))
-            selectString += "release_date='" + releaseDate + "' AND ";
+            selectString += " AND release_date='" + releaseDate + "'";
         if(category != null && !category.equals(""))
-            selectString += "category='" + category + "' AND ";
-        
-        selectString = selectString.substring(0, selectString.length()-5);
+            selectString += " AND category='" + category + "'";
         
         try
         {
@@ -380,7 +378,7 @@ public class FXMLDocumentController implements Initializable {
     }
     //End
     
-    //I have to change it*
+    //Πρεπει να το αλλαξω*
     //Handlers    
     private static void sqlExceptionHandler(SQLException e){
         try{
@@ -399,6 +397,21 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("Message: " + e.getMessage());
         System.out.println("SQLState: " + e.getSQLState());
         System.out.println("ErrorCode: " + e.getErrorCode());
+    }
+
+    private static void fxExceptionHandler(Exception e){
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter("src/Logs/JavaFX_Logs.txt", true));
+            writer.write("==============================\n");
+            writer.write(LocalDateTime.now() + "\n");
+            writer.write("==============================\n");
+            writer.write("Error Message: " + e + "\n");
+            writer.write("==============================\n");
+            writer.close();
+        } catch(IOException io){
+            System.out.println(io);
+        }
+        System.out.println("Error Message: " + e + "\n");
     }
     //End Handlers
     
