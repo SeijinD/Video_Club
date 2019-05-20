@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #5d2d90; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #5d2d90; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.MainController">
    <children>
       <Button fx:id="closeButton" layoutX="648.0" layoutY="13.0" mnemonicParsing="false" onAction="#Exit" prefHeight="25.0" prefWidth="38.0" style="-fx-background-color: #5d2d90;" text="X" textFill="WHITE">
          <font>
@@ -20,40 +20,40 @@
             <Font name="System Bold Italic" size="35.0" />
          </font>
       </Label>
-      <Button fx:id="searchButton" layoutX="299.0" layoutY="451.0" mnemonicParsing="false" onAction="#Search" prefHeight="44.0" prefWidth="107.0" text="Search" textFill="#5d2d85">
+      <Button fx:id="searchButton" layoutX="299.0" layoutY="390.0" mnemonicParsing="false" onAction="#Search" prefHeight="44.0" prefWidth="107.0" text="Search" textFill="#5d2d85">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Button>
-      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="159.0" prefHeight="30.0" prefWidth="168.0" text="Title:" textFill="WHITE">
+      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="115.0" prefHeight="30.0" prefWidth="168.0" text="Title:" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="215.0" prefHeight="30.0" prefWidth="168.0" text="Release Date:" textFill="WHITE">
+      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="172.0" prefHeight="30.0" prefWidth="168.0" text="Release Date:" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="276.0" prefHeight="30.0" prefWidth="168.0" text="Category" textFill="WHITE">
+      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="231.0" prefHeight="30.0" prefWidth="168.0" text="Category" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="394.0" prefHeight="30.0" prefWidth="168.0" text="Star:" textFill="WHITE">
+      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="348.0" prefHeight="30.0" prefWidth="168.0" text="Star:" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="340.0" prefHeight="30.0" prefWidth="168.0" text="Director:" textFill="WHITE">
+      <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="292.0" prefHeight="30.0" prefWidth="168.0" text="Director:" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="titleField" layoutX="239.0" layoutY="161.0" prefHeight="25.0" prefWidth="337.0" />
-      <TextField fx:id="starField" layoutX="239.0" layoutY="397.0" prefHeight="25.0" prefWidth="337.0" />
-      <TextField fx:id="directorField" layoutX="239.0" layoutY="340.0" prefHeight="25.0" prefWidth="337.0" />
-      <ComboBox fx:id="dateComboBox" layoutX="239.0" layoutY="218.0" prefHeight="25.0" prefWidth="337.0">
+      <TextField fx:id="titleField" layoutX="238.0" layoutY="118.0" prefHeight="25.0" prefWidth="337.0" />
+      <TextField fx:id="starField" layoutX="239.0" layoutY="350.0" prefHeight="25.0" prefWidth="337.0" />
+      <TextField fx:id="directorField" layoutX="239.0" layoutY="294.0" prefHeight="25.0" prefWidth="337.0" />
+      <ComboBox fx:id="dateComboBox" layoutX="238.0" layoutY="174.0" prefHeight="25.0" prefWidth="337.0">
           <items>
               <FXCollections fx:factory="observableArrayList">
                 <String fx:value="1940-1945" />
@@ -75,7 +75,7 @@
             </FXCollections>
           </items>
       </ComboBox>
-      <ComboBox fx:id="categoryComboBox" layoutX="239.0" layoutY="279.0" prefHeight="25.0" prefWidth="337.0">
+      <ComboBox fx:id="categoryComboBox" layoutX="239.0" layoutY="233.0" prefHeight="25.0" prefWidth="337.0">
         <items>
               <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Action" />
@@ -104,13 +104,23 @@
             </FXCollections>
         </items>
       </ComboBox>
-      <ListView fx:id="resultView" layoutX="22.0" layoutY="510.0" prefHeight="141.0" prefWidth="660.0" />
+      <ListView fx:id="resultView" layoutX="22.0" layoutY="517.0" prefHeight="134.0" prefWidth="660.0" />
       <Label fx:id="menuMessage" alignment="CENTER" layoutX="22.0" layoutY="669.0" prefHeight="21.0" prefWidth="660.0" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="openAddMovieButton" layoutX="23.0" layoutY="451.0" mnemonicParsing="false" onAction="#OpenAddMovie" prefHeight="44.0" prefWidth="99.0" text="Add Movie" textFill="#5d2d85" visible="false">
+      <Button fx:id="openAddMovieButton" layoutX="22.0" layoutY="457.0" mnemonicParsing="false" onAction="#OpenAddMovie" prefHeight="44.0" prefWidth="126.0" text="Add Movie" textFill="#5d2d85" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteMovieButton" layoutX="556.0" layoutY="457.0" mnemonicParsing="false" onAction="#DeleteMovie" prefHeight="44.0" prefWidth="126.0" text="Delete Movie" textFill="#5d2d85" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="openUserButton" layoutX="22.0" layoutY="28.0" mnemonicParsing="false" onAction="#OpenUser" prefHeight="44.0" prefWidth="71.0" text="User" textFill="#5d2d85">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>

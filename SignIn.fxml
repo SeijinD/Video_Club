@@ -7,14 +7,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="315.0" prefWidth="399.0" style="-fx-background-color: #5d2d85;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="315.0" prefWidth="399.0" style="-fx-background-color: #5d2d85;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.SignInController">
    <children>
       <Label alignment="CENTER" layoutX="59.0" layoutY="14.0" prefHeight="32.0" prefWidth="286.0" text="Create Account" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="22.0" />
          </font>
       </Label>
-      <Button fx:id="closeButton" layoutX="356.0" layoutY="14.0" mnemonicParsing="false" onAction="#Exit" prefHeight="25.0" prefWidth="38.0" style="-fx-background-color: #5d2d85;" text="X" textFill="WHITE">
+      <Button fx:id="closeButton" layoutX="356.0" layoutY="14.0" mnemonicParsing="false" onAction="#Close" prefHeight="25.0" prefWidth="38.0" style="-fx-background-color: #5d2d85;" text="X" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>

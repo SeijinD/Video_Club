@@ -7,17 +7,13 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
+import static tbd_project.InfoConnection.*;
 /**
  *
  * @author SeijinD
  */
 public class TBD_Project extends Application 
-{    
-    //define your offsets here
-    private double xOffset = 0;
-    private double yOffset = 0;
-    
+{       
     @Override
     public void start(Stage stage) throws Exception 
     {

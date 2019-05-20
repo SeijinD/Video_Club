@@ -8,18 +8,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="700.0" style="-fx-background-color: #5d2d85;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.AddMovieController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="700.0" style="-fx-background-color: #5d2d85;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.DeleteMovieController">
    <children>
-      <Label alignment="CENTER" layoutX="118.0" layoutY="28.0" prefHeight="70.0" prefWidth="464.0" text="Add Movie" textFill="WHITE" underline="true">
+      <Label alignment="CENTER" layoutX="118.0" layoutY="28.0" prefHeight="70.0" prefWidth="464.0" text="Delete Movie" textFill="WHITE" underline="true">
          <font>
             <Font name="System Bold Italic" size="35.0" />
          </font>
       </Label>
-      <Button fx:id="addMovieButton" layoutX="299.0" layoutY="451.0" mnemonicParsing="false" onAction="#AddMovie" prefHeight="44.0" prefWidth="107.0" text="Add" textFill="#5d2d85">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-      </Button>
       <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="159.0" prefHeight="30.0" prefWidth="180.0" text="Title:" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="20.0" />
@@ -99,12 +94,17 @@
             </FXCollections>
         </items>
       </ComboBox>
-      <Label fx:id="addMovieMessage" alignment="CENTER" layoutX="20.0" layoutY="521.0" prefHeight="21.0" prefWidth="660.0" textFill="WHITE">
+      <Label fx:id="deleteMovieMessage" alignment="CENTER" layoutX="20.0" layoutY="521.0" prefHeight="21.0" prefWidth="660.0" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
       <Button fx:id="goBackButton" layoutX="20.0" layoutY="19.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="30.0" prefWidth="76.0" text="Back" textFill="#5d2d85">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteMoviewButton" layoutX="299.0" layoutY="465.0" mnemonicParsing="false" onAction="#DeleteMovie" prefHeight="44.0" prefWidth="102.0" text="Delete" textFill="#5d2d85">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="700.0" style="-fx-background-color: #5d2d85;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.LogsShowController">
+   <children>
+      <Label alignment="CENTER" layoutX="118.0" layoutY="28.0" prefHeight="70.0" prefWidth="464.0" text="Logs Show" textFill="WHITE" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="logsMessage" alignment="CENTER" layoutX="20.0" layoutY="521.0" prefHeight="21.0" prefWidth="660.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="goBackButton" layoutX="20.0" layoutY="19.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="30.0" prefWidth="76.0" text="Back" textFill="#5d2d85">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
