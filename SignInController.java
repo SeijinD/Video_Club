@@ -58,16 +58,37 @@ public class SignInController {
             {
                 dbConnection = DriverManager.getConnection (url, username, passwd);
                 statement = dbConnection.createStatement();
-                statement.executeUpdate("insert INTO LOGIN (username, password, type_user) VALUES ('" + user1 + "','" + pass1 + "','" + type_user1 + "')");
-                statement.close();
-                dbConnection.close(); 
-                Stage stage = (Stage) createButton.getScene().getWindow();
-                stage.close();  
+                rs = statement.executeQuery("SELECT * FROM login WHERE username='" + user1 + "'");                
+                
             } catch(SQLException e)
             {
                 tbd_project.Handlers.sqlExceptionHandler(e);
             } 
-        }
+            
+            if(rs.next() == false)
+            {
+                try
+                {
+                    statement.executeUpdate("insert INTO LOGIN (username, password, type_user) VALUES ('" + user1 + "','" + pass1 + "','" + type_user1 + "')");                   
+                    statement.close();
+                    dbConnection.close(); 
+                    
+                    Stage stage = (Stage) createButton.getScene().getWindow();
+                    stage.close();  
+                } 
+                catch(SQLException e)
+                {                   
+                    tbd_project.Handlers.sqlExceptionHandler(e);
+                }
+            }
+            else
+            {
+                statement.close();
+                dbConnection.close(); 
+                
+                messageSignIn.setText("Τhe account already exists!");
+            }
+        }      
     }
     //End Create Account
     
