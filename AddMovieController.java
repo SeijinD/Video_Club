@@ -29,28 +29,61 @@ public class AddMovieController {
     //Add Movie in Database
     @FXML
     public void AddMovie(ActionEvent event) throws Exception
-    {
+    {      
         String title = titleFieldAdd.getText();
         String director = directorFieldAdd.getText();
         String star = starFieldAdd.getText();
         String releaseDate = dateComboBoxAdd.getValue();
         String category = categoryComboBoxAdd.getValue();
-        try
+        if (title != null && director != null && star != null && releaseDate != null && category != null)
         {
-            dbConnection = DriverManager.getConnection (url, username, passwd);
-            statement    = dbConnection.createStatement();
-            statement.executeUpdate("insert INTO MOVIES (title,release_date,category,director,star) VALUES ('" + title +
-                                                                                                         "','" + releaseDate + 
-                                                                                                         "','" + category + 
-                                                                                                         "','" + director + 
-                                                                                                         "','" + star +
-                                                                                                         "')");
-            statement.close();
-            dbConnection.close();
-        } catch(SQLException e)
+            try
+            {
+                dbConnection = DriverManager.getConnection (url, username, passwd);
+                statement = dbConnection.createStatement();
+                rs = statement.executeQuery("SELECT * FROM movies WHERE title='" + title + 
+                                                          "' AND release_date='" + releaseDate +
+                                                              "' AND category='" + category +
+                                                              "' AND director='" + director +
+                                                                  "' AND star='" + star +
+                                                                            "'");                
+                
+            } catch(SQLException e)
+            {
+                tbd_project.Handlers.sqlExceptionHandler(e);
+            } 
+            
+            if(rs.next() == false)
+            {
+                try
+                {
+                    dbConnection = DriverManager.getConnection (url, username, passwd);
+                    statement    = dbConnection.createStatement();
+                    statement.executeUpdate("insert INTO MOVIES (title,release_date,category,director,star) VALUES ('" + title +
+                                                                                                                 "','" + releaseDate + 
+                                                                                                                 "','" + category + 
+                                                                                                                 "','" + director + 
+                                                                                                                 "','" + star +
+                                                                                                                 "')");
+                    addMovieMessage.setText("The Movie added!");
+                
+                    statement.close();
+                    dbConnection.close();
+                } 
+                catch(SQLException e)
+                {
+                    tbd_project.Handlers.sqlExceptionHandler(e);
+                }  
+            }
+            else
+            {
+                addMovieMessage.setText("Τhe movie already exists!");
+            }
+        }
+        else
         {
-            tbd_project.Handlers.sqlExceptionHandler(e);
-        } 
+            addMovieMessage.setText("Υou must complete all fields!");
+        }
     }
     //End
     
