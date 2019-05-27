@@ -78,7 +78,6 @@ public class LoginController {
                 if(type_user == 1)
                 {
                     ((Button) scene.lookup("#openAddMovieButton")).setVisible(true);
-                    ((Button) scene.lookup("#openDeleteMovieButton")).setVisible(true);
                 }
                 Stage stage = (Stage) loginButton.getScene().getWindow();
                 stage.close(); 

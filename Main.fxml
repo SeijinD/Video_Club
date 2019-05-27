@@ -110,12 +110,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="openAddMovieButton" layoutX="22.0" layoutY="457.0" mnemonicParsing="false" onAction="#OpenAddMovie" prefHeight="44.0" prefWidth="126.0" text="Add Movie" textFill="#5d2d85" visible="false">
-         <font>
-            <Font name="System Bold Italic" size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="deleteMovieButton" layoutX="556.0" layoutY="457.0" mnemonicParsing="false" onAction="#DeleteMovie" prefHeight="44.0" prefWidth="126.0" text="Delete Movie" textFill="#5d2d85" visible="false">
+      <Button fx:id="openAddMovieButton" layoutX="556.0" layoutY="457.0" mnemonicParsing="false" onAction="#OpenAddMovie" prefHeight="44.0" prefWidth="126.0" text="Add Movie" textFill="#5d2d85" visible="false">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>

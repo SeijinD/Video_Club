@@ -111,52 +111,7 @@ public class MainController {
         addMovie.show();  
     } 
     //End Add Movie Dialog
-    
-    @FXML
-    public void DeleteMovie(ActionEvent event) throws Exception
-    {
-        int movie = resultView.getEditingIndex();
-        
-        try
-        {
-            dbConnection = DriverManager.getConnection (url, username, passwd);
-            statement    = dbConnection.createStatement();
-            statement.executeQuery("DELETE FROM MOVIE WHERE id='" + movie + "'");
-            statement.close();
-            dbConnection.close();
-        } catch(SQLException e)
-        {
-            tbd_project.Handlers.sqlExceptionHandler(e);
-        } 
-    }
-    
-    //Delete Movie Dialog
-    @FXML
-    public void OpenDeleteMovie(ActionEvent event) throws Exception
-    {
-        //create new stage.
-        Stage deleteMovie = new Stage();
-        //you can use underdecorated or transparent.
-        Parent root = FXMLLoader.load(getClass().getResource("DeleteMovie.fxml"));       
-        //stage.initStyle(StageStyle.UNDERDECORATED);
-        deleteMovie.initStyle(StageStyle.TRANSPARENT);       
-        //grab your root here
-        root.setOnMousePressed((MouseEvent event1) -> {
-            xOffset = event1.getSceneX();
-            yOffset = event1.getSceneY();
-        });  
-        //move around here
-        root.setOnMouseDragged((MouseEvent event1) -> {
-            deleteMovie.setX(event1.getScreenX() - xOffset);
-            deleteMovie.setY(event1.getScreenY() - yOffset);
-        });       
-        deleteMovie.setTitle("Delete Movie");
-        Scene scene = new Scene(root,700,560);
-        deleteMovie.setScene(scene);   
-        deleteMovie.show();  
-    } 
-    //End Delete Movie Dialog
-    
+      
     //User Dialog
     @FXML
     public void OpenUser(ActionEvent event) throws Exception

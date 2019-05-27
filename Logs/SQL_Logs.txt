@@ -1,0 +1,14 @@
+==============================
+2019-04-19T20:00:21.014
+==============================
+Message: Connection refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+SQLState: 08004
+ErrorCode: 0
+==============================
+==============================
+2019-04-19T20:00:49.102
+==============================
+Message: ERROR: unterminated quoted string at or near "'Star Wars"
+SQLState: 42601
+ErrorCode: 0
+==============================
