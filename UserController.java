@@ -1,5 +1,7 @@
 package tbd_project;
 
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,6 +50,61 @@ public class UserController {
         openReset.show();  
     } 
     //Reset Dialog
+    
+    //Logs Dialog
+    @FXML
+    public void ShowLogs(ActionEvent event) throws Exception
+    {
+        //create new stage.
+        Stage openReset = new Stage();
+        //you can use underdecorated or transparent.
+        Parent root = FXMLLoader.load(getClass().getResource("LogsShow.fxml"));       
+        //stage.initStyle(StageStyle.UNDERDECORATED);
+        openReset.initStyle(StageStyle.TRANSPARENT);       
+        //grab your root here
+        root.setOnMousePressed((MouseEvent event1) -> {
+            xOffset = event1.getSceneX();
+            yOffset = event1.getSceneY();
+        });  
+        //move around here
+        root.setOnMouseDragged((MouseEvent event1) -> {
+            openReset.setX(event1.getScreenX() - xOffset);
+            openReset.setY(event1.getScreenY() - yOffset);
+        });       
+        openReset.setTitle("Show Logs");
+        Scene scene = new Scene(root,700,560);        
+        openReset.setScene(scene);   
+        openReset.show();  
+    } 
+    //Logs Dialog
+    
+    //Delete Account Dialog
+    @FXML
+    public void DeleteAccount(ActionEvent event) throws Exception
+    {        
+        //create new stage.
+        Stage deleteAccount = new Stage();
+        //you can use underdecorated or transparent.
+        Parent root = FXMLLoader.load(getClass().getResource("DeleteAccount.fxml"));       
+        //stage.initStyle(StageStyle.UNDERDECORATED);
+        deleteAccount.initStyle(StageStyle.TRANSPARENT);       
+        //grab your root here
+        root.setOnMousePressed((MouseEvent event1) -> {
+            xOffset = event1.getSceneX();
+            yOffset = event1.getSceneY();
+        });  
+        //move around here
+        root.setOnMouseDragged((MouseEvent event1) -> {
+            deleteAccount.setX(event1.getScreenX() - xOffset);
+            deleteAccount.setY(event1.getScreenY() - yOffset);
+        });       
+        deleteAccount.setTitle("Delete Account");
+        Scene scene = new Scene(root);
+        deleteAccount.setScene(scene);   
+        deleteAccount.show();  
+        
+    }
+    //End Delete Account Dialog
     
     @FXML
     private Button closeButton;

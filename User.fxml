@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.control.*?>
@@ -7,6 +8,8 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="483.0" style="-fx-background-color: #5d2d85;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tbd_project.UserController">
    <children>
@@ -49,6 +52,20 @@
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
+      </Button>
+      <Button fx:id="showLogsButton" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#ShowLogs" prefHeight="37.0" prefWidth="73.0" text="Logs" textFill="#5d2d85" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteAccountButton" layoutX="16.0" layoutY="289.0" mnemonicParsing="false" onAction="#DeleteAccount" prefHeight="70.0" prefWidth="59.0" style="-fx-background-color: #5d2d85;" textFill="WHITE">
+         <graphic>
+                <ImageView fitHeight="61.0" fitWidth="42.0">
+                    <image>
+                        <Image url="@../Images/rubbish_bin.png" />
+                    </image>
+                </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

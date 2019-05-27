@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -16,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import static tbd_project.InfoConnection.*;
+import static tbd_project.LoginController.userType;
 
 public class MainController {
     //Main  
@@ -177,6 +179,15 @@ public class MainController {
         });       
         openUser.setTitle("User");
         Scene scene = new Scene(root,485,375);
+        int type_user;
+        if (userType == "Admin")
+            type_user = 1;
+        else
+             type_user = 0;
+        if(type_user == 1)
+        {
+            ((Button) scene.lookup("#showLogsButton")).setVisible(true);
+        }
         openUser.setScene(scene);   
         openUser.show();  
     } 

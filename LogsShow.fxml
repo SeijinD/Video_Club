@@ -20,10 +20,11 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="goBackButton" layoutX="20.0" layoutY="19.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="30.0" prefWidth="76.0" text="Back" textFill="#5d2d85">
+      <Button fx:id="closeButton" layoutX="648.0" layoutY="19.0" mnemonicParsing="false" onAction="#Close" prefHeight="25.0" prefWidth="38.0" style="-fx-background-color: #5d2d85;" text="X" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="20.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
+      <ListView fx:id="logsView" layoutX="18.0" layoutY="104.0" prefHeight="432.0" prefWidth="660.0" />
    </children>
 </AnchorPane>
