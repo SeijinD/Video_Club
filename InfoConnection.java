@@ -10,7 +10,7 @@ public class InfoConnection {
     static String     url             = "jdbc:postgresql://dblabs.it.teithe.gr:5432/it175058" ;
     static Connection dbConnection    = null;
     static String     username        = "it175058";
-    static String     passwd          = "nikopoli";
+    static String     passwd          = "";
     static Statement  statement       = null;
     static ResultSet  rs              = null;
     //End
